@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elderly Care Platform</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Elderly Care Platform</h1>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Connect. Care. Empower.</h2>
+            <p>Join our platform to make a positive impact on the lives of elderly individuals.</p>
+        </div>
+    </section>
+
+    <section class="registration">
+        <div class="container">
+            <h2>Register to Get Started</h2>
+            <form action="/register" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="javascript:void(0);" id="login-link">Login</a></p>
+        </div>
+    </section>
+
+    <section class="login" id="login-form" style="display: none;">
+        <div class="container">
+            <h2>Login</h2>
+            <form action="/login" method="post">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="login-email" required>
+
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="login-password" required>
+
+                <button type="submit" onclick="validateLogin()">Login</button>
+            </form>
+			<p id="errorMessage" style="color: red; display: none;">Invalid email or password entered.</p>
+            <p>Don't have an account? <a href="javascript:void(0);" id="register-link">Register</a></p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <ul>
+                <li>Connect with volunteers</li>
+                <li>Access personalized assistance</li>
+                <li>Ensure the well-being of elderly individuals</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Join Us in Making a Difference</h2>
+            <p>Register today to become a part of our community and contribute to the well-being of the elderly.</p>
+            <a href="/register" class= "button">Register Now</a>
+        </div>
+    </section>
+	
+		<section class="founders-section">
+			<h2 style="color:white;">Our Team</h2>
+
+			<!-- Founder Boxes -->
+			<div class="slider">
+				<div class="slide">
+					<img src="https://media.licdn.com/dms/image/D4D03AQFPYDT6OcinGw/profile-displayphoto-shrink_800_800/0/1693141755910?e=2147483647&v=beta&t=fUinIwraa-vf4s6V7UuPu2Xv4alG1KzBo-5q6SdizEQ" alt="Founder 1">
+					<h3>Soumyadip Roy</h3>
+					<p style="color:white;" class="founder-details">Founder and CEO</p>
+					<p style="color:white;" class="founder-details">Student of Heritage Institute of Technology, pursuing BTech in CSE-AI/ML.</p>
+				</div>
+				<div class="slide">
+					<img src="https://media.licdn.com/dms/image/D4D03AQHwru4DdxKfYA/profile-displayphoto-shrink_800_800/0/1696054536124?e=2147483647&v=beta&t=SRrf7TohuU87UgaHOzkRClX1AJ79Y4Zz-y6xpttnVM8" alt="Founder 2">
+					<h3>Subhodeep Roy</h3>
+					<p style="color:white;" class="founder-details">Co-founder and CTO</p>
+					<p style="color:white;" class="founder-details">Student of Heritage Institute of Technology, pursuing BTech in IT.</p>
+				</div>
+			  <!-- Add more slides as needed -->
+			</div>
+		</section>
+		
+	<script src="//code.tidio.co/3icqsz8p75jrlqwqjuawssiwyjpumzgg.js" async></script>
+
+    <footer>
+		<div class="footer-container">
+			<div class="contact-info">
+				<h4>Contact Us</h4>
+				<p><strong>Email:</strong> <a href="mailto:soumyadiproy894@gmail.com">soumyadiproy894@gmail.com</a></p>
+				<p><strong>Phone:</strong> +91 8240025143</p>
+				<p><strong>Address:</strong> 3/10 Rabindra Nagar, Behala, Kolkata-700060</p>
+			</div>
+			
+			<div class="left-aligned-sections">
+				<div class="quick-links">
+					<h4>Quick Links</h4>
+					<ul id="menuList">
+						<li><a href="/dashboard">Dashboard</a></li>
+						<li><a href="/assistance_center">Assistance Center</a></li>
+						<li><a href="/about_us">About Us</a></li>
+						<li><a href="/community_forum">Community Forum</a></li>
+						<li><a href="/volunteer_hub">Volunteer Hub</a></li>
+						<li><a href="/help">Help</a></li>
+					</ul>
+				</div>
+				
+				<div class="social-media">
+					<h4>Follow Us</h4>
+					<ul>
+						<li><a href="https://facebook.com/example"><img src="facebook-icon.png" alt="Facebook"></a></li>
+						<li><a href="https://twitter.com/example"><img src="twitter-icon.png" alt="Twitter"></a></li>
+						<!-- Add more social media links/icons -->
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="copyright">
+			<p>&copy; 2023 Elderly Care Platform. All rights reserved.</p>
+		</div>
+    </footer>
+
+	
+	<div id="errorModal" class="modal">
+        <div class="modal-content animate__animated animate__fadeIn">
+            <span class="close" onclick="closeErrorModal()">&times;</span>
+            <p id="errorModalMessage"></p>
+        </div>
+    </div>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			var loginForm = document.getElementById('login-form');
+			var registerForm = document.querySelector('form[action="/register"]');
+			var registrationSection = document.querySelector('.registration');
+			var loginSection = document.querySelector('.login');
+			
+
+			function toggleLogin() {
+				if (loginForm.style.display === 'none' || loginForm.style.display === '') {
+					loginForm.style.display = 'block';
+					registerForm.style.display = 'none';
+				} else {
+					loginForm.style.display = 'none';
+					registerForm.style.display = 'block';
+				}
+			}
+
+			var loginLink = document.querySelector('#login-link');
+			loginLink.addEventListener('click', toggleLogin);
+
+			var registerLink = document.querySelector('#register-link');
+			registerLink.addEventListener('click', function () {
+				if (registerForm.style.display === 'none' || registerForm.style.display === '') {
+					registerForm.style.display = 'block';
+					loginForm.style.display = 'none';
+				} else {
+					registerForm.style.display = 'none';
+					loginForm.style.display = 'block';
+				}
+			});
+
+			function handleMouseMove(event) {
+				// Check if the mouse is over the registration section
+				if (isMouseOverElement(event, registrationSection)) {
+					registerForm.style.display = 'block';
+					loginForm.style.display = 'none';
+				}
+				// Check if the mouse is over the login section
+				else if (isMouseOverElement(event, loginSection)) {
+					loginForm.style.display = 'block';
+					registerForm.style.display = 'none';
+				}
+			}
+
+			document.addEventListener('mousemove', handleMouseMove);
+		});
+
+
+	</script>
+	
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+	
+	<script>
+		  $(document).ready(function(){
+			$('.slider').slick({
+				dots: true,
+				infinite: true,
+				speed: 500,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 3000,
+				prevArrow: '<button type="button" class="slick-prev">&#9665;</button>',
+				nextArrow: '<button type="button" class="slick-next">&#9655;</button>'
+			});
+		});
+	</script>
+	
+</body>
+</html>
