@@ -1,0 +1,182 @@
+<!-- dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .dashboard-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .user-details {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .user-details img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .user-details p {
+            font-size: 18px;
+        }
+
+        /* Style for upload button */
+        .custom-file-input {
+            display: none;
+        }
+
+        .upload-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .upload-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style for profile form */
+        .profile-form input[type="text"],
+        .profile-form input[type="email"] {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .profile-form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .profile-form button {
+            padding: 8px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .profile-form button:hover {
+            background-color: #0056b3;
+        }
+		
+        .menu {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            display: none; /* Initially hidden */
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            position: absolute;
+            top: 30px;
+            right: 0;
+        }
+
+        .menu ul li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .menu ul li:last-child {
+            border-bottom: none;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+        }
+	</style>
+</head>
+<body>
+
+	<div class="menu">
+        <a href="javascript:void(0)" onclick="toggleMenu()">Menu &#9776;</a>
+        <ul id="menuList">
+            <li><a href="/assistance_center">Assistance Center</a></li>
+            <li><a href="/about_us">About Us</a></li>
+            <li><a href="/community_forum">Community Forum</a></li>
+            <li><a href="/volunteer_hub">Volunteer Hub</a></li>
+            <li><a href="/help">Help</a></li>
+        </ul>
+    </div>
+
+    <div class="dashboard-container">
+        <h1>Welcome, {{ session.user.username }}!</h1>
+
+        <!-- User details section -->
+        <div class="user-details">
+            <img id="userImage" src="default_user_image.jpg" alt="User Image">
+            <div>
+                <p><strong>User: </strong>{{ session.user.username }}</p>
+                <p><strong>Email: </strong>{{ session.user.email }}</p>
+                <!-- Add more user details here -->
+            </div>
+        </div>
+
+        <!-- Image upload section -->
+        <input type="file" id="uploadInput" class="custom-file-input" accept="image/*">
+        <label for="uploadInput" class="upload-btn">Upload Profile Image</label>
+		
+		<form class="profile-form">
+            <input type="text" id="fullName" placeholder="Full Name">
+            <input type="text" id="address" placeholder="Address">
+            <input type="email" id="contactEmail" placeholder="Contact Email">
+            <textarea id="bio" placeholder="Bio"></textarea>
+            <button type="submit">Save Profile</button>
+        </form>
+
+
+        <!-- Script for handling image upload -->
+        <script>
+            document.getElementById('uploadInput').addEventListener('change', function() {
+                var file = this.files[0];
+                var reader = new FileReader();
+                reader.onload = function(event) {
+                    document.getElementById('userImage').src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            });
+        </script>
+    </div>
+	
+	<script>
+        function toggleMenu() {
+            var menuList = document.getElementById('menuList');
+            if (menuList.style.display === 'block') {
+                menuList.style.display = 'none';
+            } else {
+                menuList.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pension Calculator</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f4f4f4;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			border-radius: 5px;
+		}
+
+		h1 {
+			text-align: center;
+			margin-bottom: 30px;
+			color: #333;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 8px;
+			color: #555;
+		}
+
+		input[type="number"],
+		input[type="submit"] {
+			width: calc(100% - 20px);
+			padding: 10px;
+			margin-bottom: 15px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+		}
+
+		input[type="submit"] {
+			background-color: #007bff;
+			color: #fff;
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #0056b3;
+		}
+
+		#service_duration,
+		#average_salary,
+		#contribution_rate,
+		#retirement_age {
+			margin-bottom: 20px;
+		}
+		p {
+			font-size: 18px;
+			color: #333;
+			margin-bottom: 15px;
+		}
+	</style>
+</head>
+<body>
+    <h1>Pension Calculator</h1>
+    <form action="/calculate_pension" method="post">
+        <label for="service_duration">Service Duration (years):</label>
+        <input type="number" id="service_duration" name="service_duration" required><br><br>
+
+        <label for="average_salary">Average Salary (per year):</label>
+        <input type="number" id="average_salary" name="average_salary" required><br><br>
+
+        <label for="contribution_rate">Contribution Rate (%):</label>
+        <input type="number" id="contribution_rate" name="contribution_rate" step="0.01" required><br><br>
+
+        <label for="retirement_age">Retirement Age:</label>
+        <input type="number" id="retirement_age" name="retirement_age" required><br><br>
+
+        <label for="date_of_birth">Date of Birth:</label>
+        <input type="date" id="date_of_birth" name="date_of_birth" required><br><br>
+
+        <label for="retirement_type">Retirement Type:</label>
+        <select id="retirement_type" name="retirement_type" required>
+            <option value="normal">Normal</option>
+            <option value="voluntary">Voluntary</option>
+            <option value="premature">Premature</option>
+            <!-- Add other retirement types -->
+        </select><br><br>
+
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+</html>
+

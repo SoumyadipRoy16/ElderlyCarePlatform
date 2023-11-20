@@ -1,0 +1,160 @@
+<!-- templates/community_forum.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Forum - Elderly Care Platform</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<style>
+        .menu {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            display: none; /* Initially hidden */
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            position: absolute;
+            top: 30px;
+            right: 0;
+        }
+
+        .menu ul li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .menu ul li:last-child {
+            border-bottom: none;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Elderly Care Platform</h1>
+        </div>
+		
+		<div class="menu">
+			<a href="javascript:void(0)" onclick="toggleMenu()">Menu &#9776;</a>
+			<ul id="menuList">
+				<li><a href="/dashboard">Dashboard</a></li>
+				<li><a href="/assistance_center">Assistance Center</a></li>
+				<li><a href="/about_us">About Us</a></li>
+				<li><a href="/volunteer_hub">Volunteer Hub</a></li>
+				<li><a href="/help">Help</a></li>
+			</ul>
+		</div>
+    </header>
+	
+	<div class="menu">
+        <a href="javascript:void(0)" onclick="toggleMenu()">Menu &#9776;</a>
+        <ul id="menuList">
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/assistance_center">Assistance Center</a></li>
+            <li><a href="/about_us">About Us</a></li>
+            <li><a href="/volunteer_hub">Volunteer Hub</a></li>
+            <li><a href="/help">Help</a></li>
+        </ul>
+    </div>
+	
+    <section class="feature-details">
+        <div class="container">
+            <h2>Community Forum</h2>
+            <p>Connect with other users, share experiences, and engage in discussions related to elderly care. Join our community forum to be a part of the conversation.</p>
+
+            <div class="discussion">
+                <h3>Discussion Topic 1: Tips for Dementia Care</h3>
+                <p>Share your experiences and learn from others about effective strategies and tips for providing care to individuals with dementia.</p>
+            </div>
+
+            <div class="discussion">
+                <h3>Discussion Topic 2: Balancing Work and Caregiving</h3>
+                <p>Discuss challenges and solutions for individuals balancing work responsibilities while providing care for elderly family members.</p>
+            </div>
+
+            <div class="discussion">
+                <h3>Discussion Topic 3: Emotional Well-being</h3>
+                <p>Explore the emotional aspects of caregiving and share coping mechanisms to maintain positive mental health.</p>
+            </div>
+
+            <!-- Add more discussions as needed -->
+
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <p>Join our Community Forum and connect with a supportive community. Share your knowledge, seek advice, and contribute to discussions on various aspects of elderly care.</p>
+            <a href="{{ url_for('join_forum') }}" class="button">Join the Forum</a>
+        </div>
+    </section>
+
+    <!-- ... (additional sections or content) ... -->
+	<script src="//code.tidio.co/3icqsz8p75jrlqwqjuawssiwyjpumzgg.js" async></script>
+
+    <footer>
+		<div class="footer-container">
+			<div class="contact-info">
+				<h4>Contact Us</h4>
+				<p><strong>Email:</strong> <a href="mailto:soumyadiproy894@gmail.com">soumyadiproy894@gmail.com</a></p>
+				<p><strong>Phone:</strong> +91 8240025143</p>
+				<p><strong>Address:</strong> 3/10 Rabindra Nagar, Behala, Kolkata-700060</p>
+			</div>
+			
+			<div class="left-aligned-sections">
+				<div class="quick-links">
+					<h4>Quick Links</h4>
+					<ul id="menuList">
+						<li><a href="/dashboard">Dashboard</a></li>
+						<li><a href="/assistance_center">Assistance Center</a></li>
+						<li><a href="/about_us">About Us</a></li>
+						<li><a href="/community_forum">Community Forum</a></li>
+						<li><a href="/volunteer_hub">Volunteer Hub</a></li>
+						<li><a href="/help">Help</a></li>
+					</ul>
+				</div>
+				
+				<div class="social-media">
+					<h4>Follow Us</h4>
+					<ul>
+						<li><a href="https://facebook.com/example"><img src="facebook-icon.png" alt="Facebook"></a></li>
+						<li><a href="https://twitter.com/example"><img src="twitter-icon.png" alt="Twitter"></a></li>
+						<!-- Add more social media links/icons -->
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="copyright">
+			<p>&copy; 2023 Elderly Care Platform. All rights reserved.</p>
+		</div>
+    </footer>
+
+	
+	<script>
+        function toggleMenu() {
+            var menuList = document.getElementById('menuList');
+            if (menuList.style.display === 'block') {
+                menuList.style.display = 'none';
+            } else {
+                menuList.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>

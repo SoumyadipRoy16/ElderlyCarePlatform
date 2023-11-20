@@ -1,0 +1,162 @@
+<!-- templates/volunteer_hub.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Hub - Elderly Care Platform</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<style>
+        .menu {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            display: none; /* Initially hidden */
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            position: absolute;
+            top: 30px;
+            right: 0;
+        }
+
+        .menu ul li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .menu ul li:last-child {
+            border-bottom: none;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Elderly Care Platform</h1>
+        </div>
+		<div class="menu">
+			<a href="javascript:void(0)" onclick="toggleMenu()">Menu &#9776;</a>
+			<ul id="menuList">
+				<li><a href="/dashboard">Dashboard</a></li>
+				<li><a href="/assistance_center">Assistance Center</a></li>
+				<li><a href="/about_us">About Us</a></li>
+				<li><a href="/community_forum">Community Forum</a></li>
+				<li><a href="/help">Help</a></li>
+			</ul>
+		</div>
+    </header>
+
+	<div class="menu">
+        <a href="javascript:void(0)" onclick="toggleMenu()">Menu &#9776;</a>
+        <ul id="menuList">
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/assistance_center">Assistance Center</a></li>
+            <li><a href="/about_us">About Us</a></li>
+            <li><a href="/community_forum">Community Forum</a></li>
+            <li><a href="/help">Help</a></li>
+        </ul>
+    </div>
+    <section class="feature-details">
+        <div class="container">
+            <h2>Volunteer Hub</h2>
+            <p>Explore a variety of volunteer opportunities in your community. Make a difference by offering your time and skills to support elderly individuals in need.</p>
+
+            <div class="opportunity">
+                <h3>Opportunity 1: Companionship Program</h3>
+                <p>Join our Companionship Program to spend quality time with elderly individuals who may be feeling lonely. Share stories, play games, and create lasting connections.</p>
+                <p><strong>Time Commitment:</strong> 2 hours per week</p>
+            </div>
+
+            <div class="opportunity">
+                <h3>Opportunity 2: Meal Assistance Program</h3>
+                <p>Contribute to our Meal Assistance Program by helping prepare and deliver nutritious meals to elderly individuals in your community. Ensure they receive the support they need for a healthy diet.</p>
+                <p><strong>Time Commitment:</strong> Flexible scheduling</p>
+            </div>
+
+            <div class="opportunity">
+                <h3>Opportunity 3: Technology Tutoring</h3>
+                <p>Share your tech-savvy skills with elderly individuals who want to learn more about using smartphones, tablets, and computers. Help them stay connected with their loved ones in the digital age.</p>
+                <p><strong>Time Commitment:</strong> 1 hour per session</p>
+            </div>
+
+            <!-- Add more opportunities as needed -->
+
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <p>Ready to make a difference? Join our Volunteer Hub today and contribute to the well-being of elderly individuals in your community.</p>
+            <a href="{{ url_for('get_involved') }}" class="button">Get Involved</a>
+        </div>
+    </section>
+
+    <!-- ... (additional sections or content) ... -->
+	<script src="//code.tidio.co/3icqsz8p75jrlqwqjuawssiwyjpumzgg.js" async></script>
+
+    <footer>
+		<div class="footer-container">
+			<div class="contact-info">
+				<h4>Contact Us</h4>
+				<p><strong>Email:</strong> <a href="mailto:soumyadiproy894@gmail.com">soumyadiproy894@gmail.com</a></p>
+				<p><strong>Phone:</strong> +91 8240025143</p>
+				<p><strong>Address:</strong> 3/10 Rabindra Nagar, Behala, Kolkata-700060</p>
+			</div>
+			
+			<div class="left-aligned-sections">
+				<div class="quick-links">
+					<h4>Quick Links</h4>
+					<ul id="menuList">
+						<li><a href="/dashboard">Dashboard</a></li>
+						<li><a href="/assistance_center">Assistance Center</a></li>
+						<li><a href="/about_us">About Us</a></li>
+						<li><a href="/community_forum">Community Forum</a></li>
+						<li><a href="/volunteer_hub">Volunteer Hub</a></li>
+						<li><a href="/help">Help</a></li>
+					</ul>
+				</div>
+				
+				<div class="social-media">
+					<h4>Follow Us</h4>
+					<ul>
+						<li><a href="https://facebook.com/example"><img src="facebook-icon.png" alt="Facebook"></a></li>
+						<li><a href="https://twitter.com/example"><img src="twitter-icon.png" alt="Twitter"></a></li>
+						<!-- Add more social media links/icons -->
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="copyright">
+			<p>&copy; 2023 Elderly Care Platform. All rights reserved.</p>
+		</div>
+    </footer>
+
+	
+	<script>
+        function toggleMenu() {
+            var menuList = document.getElementById('menuList');
+            if (menuList.style.display === 'block') {
+                menuList.style.display = 'none';
+            } else {
+                menuList.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>

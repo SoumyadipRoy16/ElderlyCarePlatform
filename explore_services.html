@@ -1,0 +1,165 @@
+<!-- templates/explore_services.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Services - Elderly Care Platform</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<style>
+        .menu {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            display: none; /* Initially hidden */
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            position: absolute;
+            top: 30px;
+            right: 0;
+        }
+
+        .menu ul li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .menu ul li:last-child {
+            border-bottom: none;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Elderly Care Platform</h1>
+        </div>
+		
+		<div class="menu">
+			<a href="javascript:void(0)" onclick="toggleMenu()">Menu &#9776;</a>
+			<ul id="menuList">
+				<li><a href="/dashboard">Dashboard</a></li>
+				<li><a href="/assistance_center">Assistance Center</a></li>
+				<li><a href="/about_us">About Us</a></li>
+				<li><a href="/community_forum">Community Forum</a></li>
+				<li><a href="/volunteer_hub">Volunteer Hub</a></li>
+				<li><a href="/help">Help</a></li>
+			</ul>
+		</div>
+    </header>
+	
+	<div class="menu">
+        <a href="javascript:void(0)" onclick="toggleMenu()">Menu &#9776;</a>
+        <ul id="menuList">
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/assistance_center">Assistance Center</a></li>
+            <li><a href="/about_us">About Us</a></li>
+            <li><a href="/community_forum">Community Forum</a></li>
+            <li><a href="/volunteer_hub">Volunteer Hub</a></li>
+            <li><a href="/help">Help</a></li>
+        </ul>
+    </div>
+
+    <section class="feature-details">
+        <div class="container">
+            <h2>Explore Services</h2>
+            <p>Discover the comprehensive services offered by our Assistance Center. Each service is tailored to address specific needs and enhance the well-being of the elderly individuals in our community.</p>
+
+            <div class="service">
+                <h3>Care Coordination</h3>
+                <p>Our Care Coordination service provides personalized assistance in navigating healthcare options, scheduling appointments, and ensuring that elderly individuals receive the care they need.</p>
+            </div>
+
+            <div class="service">
+                <h3>Information Resources</h3>
+                <p>Access a wealth of information resources, including articles, guides, and videos, to stay informed about elderly care best practices and related topics. Knowledge is key to providing quality care.</p>
+            </div>
+
+            <div class="service">
+                <h3>Support Groups</h3>
+                <p>Join our Support Groups to connect with others facing similar challenges. Share experiences, receive advice, and build a strong support network. Emotional well-being is a crucial aspect of caregiving.</p>
+            </div>
+
+            <!-- Add more services as needed -->
+
+            <h3>How to Access Services</h3>
+            <p>Accessing our Assistance Center services is simple. Follow these steps:</p>
+            <ol>
+                <li>Create an account on our platform if you haven't already.</li>
+                <li>Visit the Assistance Center section to explore available services.</li>
+                <li>Click on the service you're interested in to access detailed information and resources.</li>
+                <li>Participate in support groups, read informative articles, or connect with care coordinators based on your needs.</li>
+            </ol>
+
+            <p>If you have any questions or need personalized assistance, feel free to <a href="/contact">contact us</a>.</p>
+        </div>
+    </section>
+
+    <!-- ... (additional sections or content) ... -->
+	<script src="//code.tidio.co/3icqsz8p75jrlqwqjuawssiwyjpumzgg.js" async></script>
+
+    <footer>
+		<div class="footer-container">
+			<div class="contact-info">
+				<h4>Contact Us</h4>
+				<p><strong>Email:</strong> <a href="mailto:soumyadiproy894@gmail.com">soumyadiproy894@gmail.com</a></p>
+				<p><strong>Phone:</strong> +91 8240025143</p>
+				<p><strong>Address:</strong> 3/10 Rabindra Nagar, Behala, Kolkata-700060</p>
+			</div>
+			
+			<div class="left-aligned-sections">
+				<div class="quick-links">
+					<h4>Quick Links</h4>
+					<ul id="menuList">
+						<li><a href="/dashboard">Dashboard</a></li>
+						<li><a href="/assistance_center">Assistance Center</a></li>
+						<li><a href="/about_us">About Us</a></li>
+						<li><a href="/community_forum">Community Forum</a></li>
+						<li><a href="/volunteer_hub">Volunteer Hub</a></li>
+						<li><a href="/help">Help</a></li>
+					</ul>
+				</div>
+				
+				<div class="social-media">
+					<h4>Follow Us</h4>
+					<ul>
+						<li><a href="https://facebook.com/example"><img src="facebook-icon.png" alt="Facebook"></a></li>
+						<li><a href="https://twitter.com/example"><img src="twitter-icon.png" alt="Twitter"></a></li>
+						<!-- Add more social media links/icons -->
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="copyright">
+			<p>&copy; 2023 Elderly Care Platform. All rights reserved.</p>
+		</div>
+    </footer>
+
+	
+	<script>
+        function toggleMenu() {
+            var menuList = document.getElementById('menuList');
+            if (menuList.style.display === 'block') {
+                menuList.style.display = 'none';
+            } else {
+                menuList.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
